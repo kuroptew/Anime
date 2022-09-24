@@ -1,11 +1,13 @@
-const modal = document.querySelector('.search-model')
+const modal = () => {
+  const modal = document.querySelector('.search-model')
 
-const modalBtn = document.querySelector('.icon_search')
+  const modalBtn = document.querySelector('.icon_search')
 
-const modalClose = modal.querySelector('.search-close-switch')
+  const modalClose = modal.querySelector('.search-close-switch')
 
-modalBtn.addEventListener('click', () => modal.style.display = "block")
+  modalBtn.addEventListener('click', () => modal.style.display = "block")
 
-modalClose.addEventListener('click', () => modal.style.display = "none")
+  modalClose.addEventListener('click', () => modal.style.display = "none")
+}
 
-asdad =
+modal()
