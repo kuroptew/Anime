@@ -23,7 +23,7 @@ const detailData = () => {
     const breadcump =document.querySelector('.breadcrumb__links span')
 
     if (animeObj) {
-      imageBlock.dataset.setbg = animeObj.image
+      imageBlock.dataset.setbg = animeObj.image.replace('http', 'https')
       viewsBlock.insertAdjacentHTML('beforeend', `
         <i class="fa fa-eye"></i> ${animeObj.views}
       `)

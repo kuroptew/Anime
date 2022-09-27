@@ -24,8 +24,6 @@ const categoriesData = () => {
       const list = arr.filter(item => item.tags.includes(ganre))
                       .filter((item,index,arr)=> index ===arr.findIndex(el=>el.title === item.title))
 
-      console.log(list)
-
       listBlock.classList.add('row')
 
       productBlock.insertAdjacentHTML('beforeend', `
@@ -54,7 +52,7 @@ const categoriesData = () => {
         listBlock.insertAdjacentHTML('beforeend', `
             <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="product__item">
-                <div class="product__item__pic set-bg" data-setbg="${item.image}">
+                <div class="product__item__pic set-bg" data-setbg="${item.image.replace('http', 'https')}">
                   <div class="ep">${item.rating}/10</div>
                     <div class="view"><i class="fa fa-eye"></i> ${item.views}</div>
                   </div>
@@ -79,11 +77,12 @@ const categoriesData = () => {
     const wrapper = document.querySelector('.filter__gallery')
 
     arr.forEach(item => {
+      console.log(item.image)
       wrapper.insertAdjacentHTML('beforeend', `
-        <div class="product__sidebar__view__item set-bg mix" data-setbg="${item.image}">
+        <div class="product__sidebar__view__item set-bg mix" data-setbg="${item.image.replace('http', 'https')}">
           <div class="ep">${item.rating}</div>
           <div class="view"><i class="fa fa-eye"></i>${item.views}</div>
-          <h5><a href="/anime-details.html?itemId=${item.id}>${item.title}</a></h5>
+          <h5><a href="/anime-details.html?itemId=${item.id}">${item.title}</a></h5>
         </div>
       `)
     });
