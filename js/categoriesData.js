@@ -77,7 +77,6 @@ const categoriesData = () => {
     const wrapper = document.querySelector('.filter__gallery')
 
     arr.forEach(item => {
-      console.log(item.image)
       wrapper.insertAdjacentHTML('beforeend', `
         <div class="product__sidebar__view__item set-bg mix" data-setbg="${item.image.replace('http', 'https')}">
           <div class="ep">${item.rating}</div>
