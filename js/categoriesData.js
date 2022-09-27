@@ -22,6 +22,9 @@ const categoriesData = () => {
       const listBlock = document.createElement('div')
 
       const list = arr.filter(item => item.tags.includes(ganre))
+                      .filter((item,index,arr)=> index ===arr.findIndex(el=>el.title === item.title))
+
+      console.log(list)
 
       listBlock.classList.add('row')
 
@@ -80,7 +83,7 @@ const categoriesData = () => {
         <div class="product__sidebar__view__item set-bg mix" data-setbg="${item.image}">
           <div class="ep">${item.rating}</div>
           <div class="view"><i class="fa fa-eye"></i>${item.views}</div>
-          <h5><a href="/anime-details.html">${item.title}</a></h5>
+          <h5><a href="/anime-details.html?itemId=${item.id}>${item.title}</a></h5>
         </div>
       `)
     });
